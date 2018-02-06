@@ -1,0 +1,29 @@
+{
+  "name": "empty",
+  "version": "0.1.0",
+  "description": "empty",
+  "main": "empty",
+  "scripts": {
+    "test": "echo tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "empty"
+  },
+  "keywords": [
+    "empty"
+  ],
+  "author": "kr1an@hotmail.com",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "husky": "^0.14.3"
+  },
+  "dependencies": {}
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm test"
+    }
+  }
+}
