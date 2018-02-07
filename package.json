@@ -4,7 +4,9 @@
   "description": "empty",
   "main": "empty",
   "scripts": {
-    "test": "echo tests"
+    "test": "echo tests",
+    "check": "npm run check:linter",
+    "check:linter": "./node_modules/.bin/eslint src/*"
   },
   "repository": {
     "type": "git",
@@ -16,14 +18,15 @@
   "author": "kr1an@hotmail.com",
   "license": "MIT",
   "devDependencies": {
+    "eslint": "^4.17.0",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.8.0",
     "husky": "^0.14.3"
   },
-  "dependencies": {}
+  "dependencies": {},
   "husky": {
     "hooks": {
-      "pre-commit": "npm test"
+      "precommit": "npm run check"
     }
   }
 }
