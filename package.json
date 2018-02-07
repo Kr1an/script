@@ -1,32 +1,38 @@
 {
-  "name": "empty",
+  "name": "empty-interpritor",
   "version": "0.1.0",
-  "description": "empty",
-  "main": "empty",
+  "description": "<Language Name> interpritor.",
+  "main": "src/index.js",
   "scripts": {
-    "test": "echo tests",
+    "test": "./node_modules/.bin/mocha",
+    "test:watch": "./node_modules/.bin/mocha --watch",
     "check": "npm run check:linter",
-    "check:linter": "./node_modules/.bin/eslint src/*"
+    "check:linter": "./node_modules/.bin/eslint src/*.js",
+    "check:mocha": "./node_modules/.bin/mocha"
   },
   "repository": {
     "type": "git",
-    "url": "empty"
+    "url": "https://github.com/Kr1an/script.git"
   },
   "keywords": [
-    "empty"
+    "interpreter"
   ],
   "author": "kr1an@hotmail.com",
   "license": "MIT",
   "devDependencies": {
+    "chai": "^4.1.2",
+    "coffee-script": "^1.12.7",
     "eslint": "^4.17.0",
     "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-coffeescript": "^0.2.1",
     "eslint-plugin-import": "^2.8.0",
-    "husky": "^0.14.3"
+    "husky": "^0.14.3",
+    "mocha": "^5.0.0"
   },
   "dependencies": {},
   "husky": {
     "hooks": {
-      "precommit": "npm run check"
+      "precommit": "echo 'hello'"
     }
   }
 }
