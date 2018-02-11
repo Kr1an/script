@@ -1,0 +1,3 @@
+--require coffee-script/register ./test/requireDepends.js
+--watch-extensions coffee
+test/**/*.coffee

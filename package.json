@@ -5,10 +5,14 @@
   "main": "src/index.js",
   "scripts": {
     "test": "./node_modules/.bin/mocha",
-    "test:watch": "./node_modules/.bin/mocha --watch",
-    "check": "npm run check:linter",
-    "check:linter": "./node_modules/.bin/eslint src/*.js",
-    "check:mocha": "./node_modules/.bin/mocha"
+    "lint": "./node_modules/.bin/eslint src"
+  },
+  "husky": {
+    "silent": false,
+    "hooks": {
+      "pre-publish": "npm-auto-version",
+      "pre-push": "npm run lint && npm run test"
+    }
   },
   "repository": {
     "type": "git",
@@ -20,19 +24,14 @@
   "author": "kr1an@hotmail.com",
   "license": "MIT",
   "devDependencies": {
-    "chai": "^4.1.2",
     "coffee-script": "^1.12.7",
     "eslint": "^4.17.0",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-coffeescript": "^0.2.1",
     "eslint-plugin-import": "^2.8.0",
-    "husky": "^0.14.3",
-    "mocha": "^5.0.0"
+    "husky": "^0.15.0-rc.6",
+    "mocha": "^5.0.0",
+    "should": "^13.2.1"
   },
-  "dependencies": {},
-  "husky": {
-    "hooks": {
-      "precommit": "echo 'hello'"
-    }
-  }
+  "dependencies": {}
 }
